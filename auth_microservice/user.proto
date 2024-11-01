@@ -33,7 +33,8 @@ message CreateUserRequest {
   string email = 1;
   string full_name = 2;
   string avatar_url = 3;
-  Role role = 4;
+  string password = 4;
+  Role role = 5;
 }
 
 message UpdateUserRequest {
