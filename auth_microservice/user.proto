@@ -14,7 +14,8 @@ message User {
   string email = 2;
   string full_name = 3;
   string avatar_url = 4;
-  Role role = 5;
+  string password = 5;
+  Role role = 6;
 }
 
 service UserService {
