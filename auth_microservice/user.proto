@@ -6,7 +6,6 @@ option go_package="gen_proto/auth_microservice";
 enum Role {
   ADMIN = 0;
   USER = 1;
-  GUEST = 2;
 }
 
 message User {
@@ -14,7 +13,8 @@ message User {
   string email = 2;
   string full_name = 3;
   string avatar_url = 4;
-  Role role = 5;
+  string password = 5;
+  Role role = 6;
 }
 
 service UserService {
