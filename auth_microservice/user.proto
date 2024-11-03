@@ -3,11 +3,23 @@ syntax = "proto3";
 package auth_microservice;
 option go_package="gen_proto/auth_microservice";
 
+import "google/protobuf/empty.proto";
+
+service UserService {
+  rpc GetUserById(GetUserRequest) returns (User);
+  rpc CreateUser(CreateUserRequest) returns (User);
+  rpc UpdateUser(UpdateUserRequest) returns (User);
+  rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty);
+}
+
+// next id: 2
 enum Role {
   ADMIN = 0;
   USER = 1;
+  PRO_USER = 2;
 }
 
+// next id: 8
 message User {
   int32 id = 1;
   string email = 2;
@@ -15,39 +27,31 @@ message User {
   string avatar_url = 4;
   string password = 5;
   Role role = 6;
+  bool isActive = 7;
 }
 
-service UserService {
-  rpc GetUserById(GetUserRequest) returns (User);
-  rpc CreateUser(CreateUserRequest) returns (User);
-  rpc UpdateUser(UpdateUserRequest) returns (User);
-  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
-}
-
+// next id: 2
 message GetUserRequest {
   int32 id = 1;
 }
 
+// next id: 5
 message CreateUserRequest {
   string email = 1;
   string full_name = 2;
-  string avatar_url = 3;
-  string password = 4;
-  Role role = 5;
+  string password = 3;
+  Role role = 4;
 }
 
+// next id: 5
 message UpdateUserRequest {
   int32 id = 1;
   string email = 2;
   string full_name = 3;
-  string avatar_url = 4;
-  Role role = 5;
+  Role role = 4;
 }
 
+// next id: 2
 message DeleteUserRequest {
   int32 id = 1;
-}
-
-message DeleteUserResponse {
-  bool success = 1;
 }
