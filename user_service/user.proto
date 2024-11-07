@@ -24,8 +24,6 @@ message User {
   int32 id = 1;
   string email = 2;
   string full_name = 3;
-  string avatar_url = 4;
-  string password = 5;
   Role role = 6;
   bool isActive = 7;
 }
