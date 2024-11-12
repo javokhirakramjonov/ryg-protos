@@ -4,6 +4,7 @@ package task_microservice;
 option go_package="gen_proto/task_service";
 
 import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
 service ChallengeService {
   rpc GetChallengeById(GetChallengeRequest) returns (Challenge);
@@ -15,18 +16,21 @@ service ChallengeService {
 service TaskService {
   rpc GetTasksByChallengeId(GetTasksByChallengeIdRequest) returns (TaskList);
   rpc GetTaskById(GetTaskRequest) returns (Task);
+  rpc GetTaskByChallengeIdAndDate(GetTaskByChallengeIdAndDateRequest) returns (TaskWithStatusList);
   rpc CreateTasks(CreateTasksRequest) returns (TaskList);
   rpc CreateTask(CreateTaskRequest) returns (Task);
   rpc UpdateTask(UpdateTaskRequest) returns (Task);
   rpc DeleteTask(DeleteTaskRequest) returns (google.protobuf.Empty);
 }
 
-// next id: 5
+// next id: 7
 message Challenge {
   int32 id = 1;
   string title = 2;
   string description = 3;
   int32 user_id = 4;
+  google.protobuf.Timestamp start_date = 5;
+  google.protobuf.Timestamp finish_date = 6;
 }
 
 // next id: 6
@@ -34,8 +38,26 @@ message Task {
   int32 id = 1;
   string title = 2;
   string description = 3;
-  string status = 4;
   int32 challenge_id = 5;
+}
+
+// next id: 4
+message TaskWithStatus {
+  Task task = 1;
+  string status = 2;
+  google.protobuf.Timestamp date = 3;
+}
+
+// next id: 2
+message TaskWithStatusList {
+  repeated TaskWithStatus task_with_status = 1;
+}
+
+// next id: 4
+message GetTaskByChallengeIdAndDateRequest {
+  int32 challenge_id = 1;
+  google.protobuf.Timestamp date = 2;
+  int32 user_id = 3;
 }
 
 // next id: 2
