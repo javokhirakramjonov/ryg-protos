@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package task_microservice;
+option go_package="gen_proto/task_service";
+
+import "google/protobuf/empty.proto";
+
+service ChallengeService {
+  rpc GetChallengeById(GetChallengeRequest) returns (Challenge);
+  rpc CreateChallenge(CreateChallengeRequest) returns (Challenge);
+  rpc UpdateChallenge(UpdateChallengeRequest) returns (Challenge);
+  rpc DeleteChallenge(DeleteChallengeRequest) returns (google.protobuf.Empty);
+}
+
+service TaskService {
+  rpc GetTasksByChallengeId(GetTasksByChallengeIdRequest) returns (TaskList);
+  rpc GetTaskById(GetTaskRequest) returns (Task);
+  rpc CreateTasks(CreateTasksRequest) returns (TaskList);
+  rpc CreateTask(CreateTaskRequest) returns (Task);
+  rpc UpdateTask(UpdateTaskRequest) returns (Task);
+  rpc DeleteTask(DeleteTaskRequest) returns (google.protobuf.Empty);
+}
+
+// next id: 5
+message Challenge {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  int32 user_id = 4;
+}
+
+// next id: 6
+message Task {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  string status = 4;
+  int32 challenge_id = 5;
+}
+
+// next id: 2
+message TaskList {
+  repeated Task task = 1;
+}
+
+// next id: 2
+message CreateTasksRequest {
+  repeated CreateTaskRequest task_request = 1;
+}
+
+// next id: 4
+message CreateChallengeRequest {
+  string title = 1;
+  string description = 2;
+  int32 user_id = 3;
+}
+
+// next id: 5
+message UpdateChallengeRequest {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  int32 user_id = 4;
+}
+
+// next id: 3
+message DeleteChallengeRequest {
+  int32 id = 1;
+  int32 user_id = 2;
+}
+
+// next id: 3
+message GetChallengeRequest {
+  int32 id = 1;
+  int32 user_id = 2;
+}
+
+// next id: 3
+message GetTasksByChallengeIdRequest {
+  int32 challenge_id = 1;
+  int32 user_id = 2;
+}
+
+// next id: 4
+message CreateTaskRequest {
+  string title = 1;
+  string description = 2;
+  int32 challenge_id = 3;
+}
+
+// next id: 5
+message UpdateTaskRequest {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  int32 user_id = 4;
+}
+
+// next id: 3
+message DeleteTaskRequest {
+  int32 id = 1;
+  int32 user_id = 2;
+}
+
+// next id: 3
+message GetTaskRequest {
+  int32 id = 1;
+  int32 user_id = 2;
+}
