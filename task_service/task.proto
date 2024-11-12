@@ -30,7 +30,7 @@ message Challenge {
   string description = 3;
   int32 user_id = 4;
   google.protobuf.Timestamp start_date = 5;
-  google.protobuf.Timestamp finish_date = 6;
+  google.protobuf.Timestamp end_date = 6;
 }
 
 // next id: 6
@@ -76,7 +76,7 @@ message CreateChallengeRequest {
   string description = 2;
   int32 user_id = 3;
   google.protobuf.Timestamp start_date = 4;
-  google.protobuf.Timestamp finish_date = 5;
+  google.protobuf.Timestamp end_date = 5;
 }
 
 // next id: 5
@@ -86,7 +86,7 @@ message UpdateChallengeRequest {
   string description = 3;
   int32 user_id = 4;
   google.protobuf.Timestamp start_date = 5;
-  google.protobuf.Timestamp finish_date = 6;
+  google.protobuf.Timestamp end_date = 6;
 }
 
 // next id: 3
