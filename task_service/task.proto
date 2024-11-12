@@ -75,6 +75,8 @@ message CreateChallengeRequest {
   string title = 1;
   string description = 2;
   int32 user_id = 3;
+  google.protobuf.Timestamp start_date = 4;
+  google.protobuf.Timestamp finish_date = 5;
 }
 
 // next id: 5
@@ -83,6 +85,8 @@ message UpdateChallengeRequest {
   string title = 2;
   string description = 3;
   int32 user_id = 4;
+  google.protobuf.Timestamp start_date = 5;
+  google.protobuf.Timestamp finish_date = 6;
 }
 
 // next id: 3
