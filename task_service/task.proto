@@ -107,11 +107,12 @@ message GetTasksByChallengeIdRequest {
   int32 user_id = 2;
 }
 
-// next id: 4
+// next id: 5
 message CreateTaskRequest {
   string title = 1;
   string description = 2;
   int32 challenge_id = 3;
+  int32 user_id = 4;
 }
 
 // next id: 5
