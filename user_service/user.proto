@@ -14,7 +14,7 @@ service UserService {
 
 // next id: 8
 message User {
-  int32 id = 1;
+  int64 id = 1;
   string email = 2;
   string full_name = 3;
   string role = 6;
@@ -23,7 +23,7 @@ message User {
 
 // next id: 2
 message GetUserRequest {
-  int32 id = 1;
+  int64 id = 1;
 }
 
 // next id: 5
@@ -35,12 +35,12 @@ message CreateUserRequest {
 
 // next id: 5
 message UpdateUserRequest {
-  int32 id = 1;
+  int64 id = 1;
   string email = 2;
   string full_name = 3;
 }
 
 // next id: 2
 message DeleteUserRequest {
-  int32 id = 1;
+  int64 id = 1;
 }

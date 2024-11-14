@@ -26,17 +26,17 @@ service TaskService {
 
 // next id: 7
 message Challenge {
-  int32 id = 1;
+  int64 id = 1;
   string title = 2;
   string description = 3;
-  int32 user_id = 4;
+  int64 user_id = 4;
   google.protobuf.Timestamp start_date = 5;
   google.protobuf.Timestamp end_date = 6;
 }
 
 // next id: 2
 message GetChallengesRequest {
-  int32 user_id = 1;
+  int64 user_id = 1;
 }
 
 // next id: 2
@@ -46,10 +46,10 @@ message ChallengeList {
 
 // next id: 6
 message Task {
-  int32 id = 1;
+  int64 id = 1;
   string title = 2;
   string description = 3;
-  int32 challenge_id = 5;
+  int64 challenge_id = 5;
 }
 
 // next id: 4
@@ -66,9 +66,9 @@ message TaskWithStatusList {
 
 // next id: 4
 message GetTaskByChallengeIdAndDateRequest {
-  int32 challenge_id = 1;
+  int64 challenge_id = 1;
   google.protobuf.Timestamp date = 2;
-  int32 user_id = 3;
+  int64 user_id = 3;
 }
 
 // next id: 2
@@ -85,63 +85,63 @@ message CreateTasksRequest {
 message CreateChallengeRequest {
   string title = 1;
   string description = 2;
-  int32 user_id = 3;
+  int64 user_id = 3;
   google.protobuf.Timestamp start_date = 4;
   google.protobuf.Timestamp end_date = 5;
 }
 
 // next id: 5
 message UpdateChallengeRequest {
-  int32 id = 1;
+  int64 id = 1;
   string title = 2;
   string description = 3;
-  int32 user_id = 4;
+  int64 user_id = 4;
   google.protobuf.Timestamp start_date = 5;
   google.protobuf.Timestamp end_date = 6;
 }
 
 // next id: 3
 message DeleteChallengeRequest {
-  int32 id = 1;
-  int32 user_id = 2;
+  int64 id = 1;
+  int64 user_id = 2;
 }
 
 // next id: 3
 message GetChallengeRequest {
-  int32 id = 1;
-  int32 user_id = 2;
+  int64 id = 1;
+  int64 user_id = 2;
 }
 
 // next id: 3
 message GetTasksByChallengeIdRequest {
-  int32 challenge_id = 1;
-  int32 user_id = 2;
+  int64 challenge_id = 1;
+  int64 user_id = 2;
 }
 
 // next id: 5
 message CreateTaskRequest {
   string title = 1;
   string description = 2;
-  int32 challenge_id = 3;
-  int32 user_id = 4;
+  int64 challenge_id = 3;
+  int64 user_id = 4;
 }
 
 // next id: 5
 message UpdateTaskRequest {
-  int32 id = 1;
+  int64 id = 1;
   string title = 2;
   string description = 3;
-  int32 user_id = 4;
+  int64 user_id = 4;
 }
 
 // next id: 3
 message DeleteTaskRequest {
-  int32 id = 1;
-  int32 user_id = 2;
+  int64 id = 1;
+  int64 user_id = 2;
 }
 
 // next id: 3
 message GetTaskRequest {
-  int32 id = 1;
-  int32 user_id = 2;
+  int64 id = 1;
+  int64 user_id = 2;
 }
