@@ -8,6 +8,7 @@ import "google/protobuf/timestamp.proto";
 
 service ChallengeService {
   rpc GetChallengeById(GetChallengeRequest) returns (Challenge);
+  rpc GetChallengesByUserId(GetChallengesRequest) returns (ChallengeList);
   rpc CreateChallenge(CreateChallengeRequest) returns (Challenge);
   rpc UpdateChallenge(UpdateChallengeRequest) returns (Challenge);
   rpc DeleteChallenge(DeleteChallengeRequest) returns (google.protobuf.Empty);
@@ -33,6 +34,16 @@ message Challenge {
   google.protobuf.Timestamp end_date = 6;
 }
 
+// next id: 2
+message GetChallengesRequest {
+  int32 user_id = 1;
+}
+
+// next id: 2
+message ChallengeList {
+  repeated Challenge challenges = 1;
+}
+
 // next id: 6
 message Task {
   int32 id = 1;
@@ -50,7 +61,7 @@ message TaskWithStatus {
 
 // next id: 2
 message TaskWithStatusList {
-  repeated TaskWithStatus task_with_status = 1;
+  repeated TaskWithStatus task_with_statuses = 1;
 }
 
 // next id: 4
@@ -62,12 +73,12 @@ message GetTaskByChallengeIdAndDateRequest {
 
 // next id: 2
 message TaskList {
-  repeated Task task = 1;
+  repeated Task tasks = 1;
 }
 
 // next id: 2
 message CreateTasksRequest {
-  repeated CreateTaskRequest task_request = 1;
+  repeated CreateTaskRequest task_requests = 1;
 }
 
 // next id: 4
