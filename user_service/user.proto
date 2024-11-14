@@ -22,11 +22,12 @@ message User {
   bool isActive = 7;
 }
 
-// next id: 4
+// next id: 5
 message UserForLogin {
   int64 id = 1;
   string email = 2;
   string password = 3;
+  string role = 4;
 }
 
 // next id: 2
