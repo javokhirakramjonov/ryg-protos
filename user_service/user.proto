@@ -7,6 +7,7 @@ import "google/protobuf/empty.proto";
 
 service UserService {
   rpc GetUserById(GetUserRequest) returns (User);
+  rpc GetUserByEmail(GetUserByEmailRequest) returns (User);
   rpc CreateUser(CreateUserRequest) returns (User);
   rpc UpdateUser(UpdateUserRequest) returns (User);
   rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty);
@@ -24,6 +25,11 @@ message User {
 // next id: 2
 message GetUserRequest {
   int64 id = 1;
+}
+
+// next id: 2
+message GetUserByEmailRequest {
+  string email = 1;
 }
 
 // next id: 5
