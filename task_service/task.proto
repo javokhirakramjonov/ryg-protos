@@ -16,7 +16,7 @@ service ChallengeService {
 service TaskService {
   rpc GetTasksByChallengeId(GetTasksByChallengeIdRequest) returns (TaskList);
   rpc GetTaskById(GetTaskRequest) returns (Task);
-  rpc GetTaskByChallengeIdAndDate(GetTaskByChallengeIdAndDateRequest) returns (TaskWithStatusList);
+  rpc GetTasksByChallengeIdAndDate(GetTaskByChallengeIdAndDateRequest) returns (TaskWithStatusList);
   rpc CreateTasks(CreateTasksRequest) returns (TaskList);
   rpc CreateTask(CreateTaskRequest) returns (Task);
   rpc UpdateTask(UpdateTaskRequest) returns (Task);
