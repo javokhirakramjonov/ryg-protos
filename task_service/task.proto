@@ -135,14 +135,16 @@ message UpdateTaskRequest {
   int64 challenge_id = 5;
 }
 
-// next id: 3
+// next id: 4
 message DeleteTaskRequest {
   int64 id = 1;
   int64 user_id = 2;
+  int64 challenge_id = 3;
 }
 
-// next id: 3
+// next id: 4
 message GetTaskRequest {
   int64 id = 1;
   int64 user_id = 2;
+  int64 challenge_id = 3;
 }
