@@ -21,6 +21,7 @@ service TaskService {
   rpc CreateTasks(CreateTasksRequest) returns (TaskList);
   rpc CreateTask(CreateTaskRequest) returns (Task);
   rpc UpdateTask(UpdateTaskRequest) returns (Task);
+  rpc UpdateTaskStatus(UpdateTaskStatusRequest) returns (TaskWithStatus);
   rpc DeleteTask(DeleteTaskRequest) returns (google.protobuf.Empty);
 }
 
@@ -147,4 +148,13 @@ message GetTaskRequest {
   int64 id = 1;
   int64 user_id = 2;
   int64 challenge_id = 3;
+}
+
+// next id: 6
+message UpdateTaskStatusRequest {
+  int64 task_id = 1;
+  google.protobuf.Timestamp date = 2;
+  string status = 3;
+  int64 challenge_id = 4;
+  int64 user_id = 5;
 }
