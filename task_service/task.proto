@@ -27,7 +27,7 @@ service TaskService {
   rpc DeleteTask(DeleteTaskRequest) returns (google.protobuf.Empty);
 }
 
-// next id: 8
+// next id: 9
 message Challenge {
   int64 id = 1;
   string title = 2;
@@ -36,6 +36,7 @@ message Challenge {
   optional google.protobuf.Timestamp start_date = 5;
   optional google.protobuf.Timestamp end_date = 6;
   string status = 7;
+  int32 days = 8;
 }
 
 // next id: 2
@@ -85,19 +86,21 @@ message CreateTasksRequest {
   repeated CreateTaskRequest task_requests = 1;
 }
 
-// next id: 6
+// next id: 7
 message CreateChallengeRequest {
   string title = 1;
   string description = 2;
   int64 user_id = 3;
+  int32 days = 6;
 }
 
-// next id: 7
+// next id: 8
 message UpdateChallengeRequest {
   int64 id = 1;
   string title = 2;
   string description = 3;
   int64 user_id = 4;
+  int32 days = 7;
 }
 
 // next id: 3
