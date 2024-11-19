@@ -102,7 +102,7 @@ message UpdateChallengeRequest {
 
 // next id: 3
 message StartChallengeRequest {
-  int64 challenge_start = 1;
+  int64 challenge_id = 1;
   int64 user_id = 2;
 }
 
