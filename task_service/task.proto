@@ -35,7 +35,6 @@ message Challenge {
   int64 id = 1;
   string title = 2;
   string description = 3;
-  int64 user_id = 4;
   optional google.protobuf.Timestamp start_date = 5;
   optional google.protobuf.Timestamp end_date = 6;
   string status = 7;
