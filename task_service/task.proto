@@ -187,11 +187,12 @@ message UnsubscribeFromChallengeRequest {
   int64 challenge_id = 2;
 }
 
-// next id: 4
+// next id: 5
 message AddUserToChallengeRequest {
   int64 user_id = 1;
   int64 challenge_id = 2;
   int64 user_to_add_id = 3;
+  string email = 4;
 }
 
 // next id: 2
