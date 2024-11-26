@@ -177,7 +177,6 @@ message UpdateTaskStatusRequest {
 
 // next id: 3
 message SubscribeToChallengeRequest {
-  int64 user_id = 1;
   string token = 2;
 }
 
