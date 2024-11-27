@@ -51,12 +51,13 @@ message ChallengeList {
   repeated Challenge challenges = 1;
 }
 
-// next id: 6
+// next id: 7
 message Task {
   int64 id = 1;
   string title = 2;
   string description = 3;
   int64 challenge_id = 5;
+  int32 week_days = 6;
 }
 
 // next id: 4
@@ -135,21 +136,23 @@ message GetTasksByChallengeIdRequest {
   int64 user_id = 2;
 }
 
-// next id: 5
+// next id: 6
 message CreateTaskRequest {
   string title = 1;
   string description = 2;
   int64 challenge_id = 3;
   int64 user_id = 4;
+  int32 week_days = 5;
 }
 
-// next id: 6
+// next id: 7
 message UpdateTaskRequest {
   int64 id = 1;
   string title = 2;
   string description = 3;
   int64 user_id = 4;
   int64 challenge_id = 5;
+  int32 week_days = 6;
 }
 
 // next id: 4
